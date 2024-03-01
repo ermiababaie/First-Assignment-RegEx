@@ -9,7 +9,7 @@ public class Exercises3 {
 
     public static String extractURL(String text) {
 
-        String regex = "https://www\\.[a-z]*[A-Z]*[.-]*[a-z]*[A-Z]*[.-]*[a-z]*";  // TODO
+        String regex = "https://[a-z]*[A-Z]*[-.]*[a-z]*[A-Z]*[-.]*[a-z]*[A-Z]*[-.]*[a-z]*[A-Z]*[-.]*";  // TODO
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
 
@@ -61,6 +61,6 @@ public class Exercises3 {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(extractURL(" my website https://farid-karimi.github.io"));
     }
 }
