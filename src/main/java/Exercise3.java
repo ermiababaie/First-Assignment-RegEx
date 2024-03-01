@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Exercise2 {
+public class Exercise3 {
 
 
 
@@ -44,6 +44,25 @@ public class Exercise2 {
 
     public static List<String> findWordsWithRepeatLetters(String input) {
         List<String> wordsWithRepeatLetters = new ArrayList<>();
+        for (int i = 0; i < input.length(); i++) {
+            String save;
+            int j = i;
+            while (j < input.length() && input.charAt(j) != ' ') {
+                j++;
+            }
+            save = input.substring(i, j);
+            i = j;
+            int cnt = 0;
+            j = 0;
+            for (; j < save.length(); j++) {
+                for (int k = 0; k < save.length(); k++) {
+                    if (save.charAt(j) == save.charAt(k))
+                        cnt++;
+                }
+            }
+            if (cnt > 0)
+                wordsWithRepeatLetters.add(save);
+        }
         return wordsWithRepeatLetters;
         // TODO
     }
