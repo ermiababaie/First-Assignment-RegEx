@@ -9,7 +9,7 @@ public class Exercises3 {
 
     public static String extractURL(String text) {
 
-        String regex = "https://www\\.[a-z]*[A-Z]*\\.[a-z]*";  // TODO
+        String regex = "https://www\\.[a-z]*[A-Z]*[.-]*[a-z]*[A-Z]*[.-]*[a-z]*";  // TODO
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
 
