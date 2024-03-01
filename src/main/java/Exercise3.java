@@ -43,28 +43,15 @@ public class Exercise3 {
     */
 
     public static List<String> findWordsWithRepeatLetters(String input) {
+        String regex = "\\b\\w*?([a-z])\\w*?\\1\\w*?\\b";  // TODO
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);    
         List<String> wordsWithRepeatLetters = new ArrayList<>();
-        for (int i = 0; i < input.length(); i++) {
-            String save;
-            int j = i;
-            while (j < input.length() && input.charAt(j) != ' ') {
-                j++;
-            }
-            save = input.substring(i, j);
-            i = j;
-            int cnt = 0;
-            j = 0;
-            for (; j < save.length(); j++) {
-                for (int k = 0; k < save.length(); k++) {
-                    if (save.charAt(j) == save.charAt(k))
-                        cnt++;
-                }
-            }
-            if (cnt > 0)
-                wordsWithRepeatLetters.add(save);
+        while (matcher.find()) {
+            wordsWithRepeatLetters.add(matcher.group());
         }
+    
         return wordsWithRepeatLetters;
-        // TODO
     }
 
     /*
