@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Exercises3 {
+public class Exercise2 {
 
 
 
@@ -26,7 +26,7 @@ public class Exercises3 {
      */
 
     public static boolean validateEmail(String email) {
-        String regex = "[a-z]*[A-Z]*\\.[a-z]";  // TODO
+        String regex = "\\.";  // TODO
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
 
