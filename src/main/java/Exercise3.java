@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Exercise3 {
+public class Main {
 
-    
+
 
     public static String extractURL(String text) {
-        String regex = "write your regex pattern here!";  // TODO
 
+        String regex = "https://www\\.[a-z]*[A-Z]*\\.[a-z]*";  // TODO
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
 
@@ -26,8 +26,16 @@ public class Exercise3 {
      */
 
     public static boolean validateEmail(String email) {
-        // TODO
-        return false;
+        String regex = "[a-z]*[A-Z]*\\.[a-z]";  // TODO
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+
+        if (matcher.find()) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     /*
@@ -53,6 +61,6 @@ public class Exercise3 {
     }
 
     public static void main(String[] args) {
-        // test your code here!
+
     }
 }
