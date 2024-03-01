@@ -3,16 +3,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Exercise3 {
+public class Exercises3 {
 
-    /*
-    implement the method below so that it extracts a URL from a String
-    I will write the basics for this one method, you will have to implement the other two methods from scratch
-    */
+
 
     public static String extractURL(String text) {
-        String regex = "write your regex pattern here!";  // TODO
 
+        String regex = "https://[a-z]*[A-Z]*[-.]*[a-z]*[A-Z]*[-.]*[a-z]*[A-Z]*[-.]*[a-z]*[A-Z]*[-.]*";  // TODO
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
 
@@ -29,8 +26,16 @@ public class Exercise3 {
      */
 
     public static boolean validateEmail(String email) {
-        // TODO
-        return false;
+        String regex = "[a-z]*[A-Z]*\\.[a-z]";  // TODO
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+
+        if (matcher.find()) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     /*
@@ -56,6 +61,6 @@ public class Exercise3 {
     }
 
     public static void main(String[] args) {
-        // test your code here!
+        System.out.println(extractURL(" my website https://farid-karimi.github.io"));
     }
 }
